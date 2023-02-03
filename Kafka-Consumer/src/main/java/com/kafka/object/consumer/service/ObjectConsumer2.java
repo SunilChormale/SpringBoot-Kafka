@@ -7,15 +7,15 @@ import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ObjectConsumer {
+public class ObjectConsumer2 {
 
     @Value("${topic.name}")
     private String TOPIC_NAME;
 
     private Logger log = LoggerFactory.getLogger(ObjectConsumer.class);
 
-    @KafkaListener(topics = "${topic.name}", groupId = "group1")
+    @KafkaListener(topics = "${topic.name}", groupId = "group2")
     public void consume(Long object){
-        log.info(String.format("1.Value received -> %s from the Topic named: %s", object, TOPIC_NAME));
+        log.info(String.format("2.Value received -> %s from the Topic named: %s", object, TOPIC_NAME));
     }
 }
